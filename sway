@@ -1,8 +1,10 @@
-# 
+# Default config for sway
 # $HOME/.config/sway/config
+#exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec_always systemctl --user import-environment
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always pgrep foot || foot -s
+exec_always pgrep foot || foot -s -t xterm-256color
+exec_always [ -z "BEMENU_OPTS" ] && export BEMENU_OPTS='-bil 20 --fn pango:JetBrains Mono NL Bold 15 -W 0.4 --prompt=""'
 for_window [app_id="copyq"] floating enable, sticky enable, resize set height 600px width 550px, move position cursor, move down 330
 for_window [app_id="mate-calc"] floating enable, move position cursor
 # Variables
@@ -17,12 +19,37 @@ set {
 	$menu bemenu-run -bil 20 --fn pango:JetBrains Mono NL Bold 15 -W 0.4 --prompt=""
 }
 
+# Keyboard configs
+input "1:1:AT_Translated_Set_2_keyboard" {
+    xkb_layout us
+    xkb_options caps:swapescape,ctrl:swap_lalt_lctl,altwin:menu_win
+}
+
+# Mouse configs
+   input "2:7:SynPS/2_Synaptics_TouchPad" {
+       dwt enabled
+       tap enabled
+       natural_scroll enabled
+       middle_emulation enabled
+       accel_profile flat
+       scroll_factor 0.4
+   }
+
+# Your preferred application launcher
+#set $menu wofi --show=run | xargs swaymsg exec --
+#set $gnome-schema org.gnome.desktop.interface
+
+#exec_always {
+#    gsettings set $gnome-schema gtk-theme 'Adwaita:dark'
+#    gsettings set $gnome-schema icon-theme 'Adwaita:dark'
+#    gsettings set $gnome-schema cursor-theme 'Adwaita'
+#}
 
 #custom shortcuts
 bindsym {
 	$mod+Return exec $term
 	$mod+q kill
-	$mod+r exec $term -e ranger 
+	$mod+r exec $term -e lf
 	$mod+b exec $BROWSER
 	$mod+Shift+b exec $HOME/.local/bin/private-browser
 	$mod+t exec tuition
@@ -38,12 +65,13 @@ bindsym {
 	$mod+m exec mate-calc
 	$mod+n exec diskmount
 	$mod+Shift+n exec diskunmount
+	$mod+a exec notion-app
 }
 
 
 
 # Status Bar:
-
+#
 bar {
 	swaybar_command waybar
 }
@@ -51,6 +79,7 @@ bar {
 #custom startup applications
 exec {
 	dunst
+	#lxsession
 	nm-applet --indicator
 	gammastep-indicator
 	$HOME/.local/bin/tsessions
@@ -140,7 +169,7 @@ exec {
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    #bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -204,7 +233,8 @@ bindsym Print exec grim -c -t png - | tee /home/"$USER"/pics/ss/"$(date +"%Y-%b-
 ##########################################################################################################
 
 #disable border
-default_border pixel none 
+#app_id [class="^.*"] border pixel 2
+default_border pixel 2
 default_floating_border pixel none 
 ##########################################################################################################
 
@@ -216,10 +246,14 @@ XF86MonBrightnessUp exec light -A 10
 
 XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+#XF86AudioRaiseVolume exec pamixer -i 10
+#XF86AudioLowerVolume exec pamixer -d 10
 
 XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#XF86AudioMicMute exec --no-startup-id pactl set-sink-input-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 }
+##########################################################################################################
 
 ##########################################################################################################
 output "*" background "~/pics/wallpapers/wallpaper.jpg" fill
