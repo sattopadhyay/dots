@@ -1,0 +1,69 @@
+{
+// $HOME/.config/waybar/config
+	"layer": "bottom",
+	"modules-left":["sway/workspaces", "sway/mode", "pulseaudio", "custom/memory-cpu", "custom/cputemp"],
+	"modules-center":["clock"],
+	"modules-right":["custom/diskuse","custom/temps","custom/net-status", "tray"],
+	
+	"tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+	"clock": {
+        "interval":1,
+	"format":"{:%a %d-%m-%Y %T}",
+	"on-click": "$BROWSER https://outlook.live.com/calendar/0/view/day",
+	},
+
+
+	"custom/net-status": {
+	"exec": "$HOME/.local/bin/networkstatus",
+        "format": "{}",
+	"interval": 1,
+	},
+
+	"custom/cputemp": {
+	"exec": "$HOME/.local/bin/cputemp",
+	"format": "{}",
+	"interval": 1,
+	},
+
+	"custom/temps": {
+	"exec": "$HOME/.local/bin/temps",
+	"format": "{}",
+	"interval": 1800,
+	},
+
+	"custom/diskuse": {
+	"exec": "$HOME/.local/bin/diskuse",
+	"format": "💾{}",
+	"interval": 21600,
+	},
+
+	"custom/memory-cpu": {
+	"exec": "$HOME/.local/bin/memory-cpu",
+	"format": "{}",
+	"interval": 2,
+	},
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        //"on-click": "pavucontrol"
+    },
+}
