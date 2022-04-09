@@ -1,3 +1,5 @@
+#
+# $HOME/.ansiweatherrc
 location:kolkata
 units:metric
 ansi:false
