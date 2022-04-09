@@ -1,0 +1,10 @@
+location:kolkata
+units:metric
+ansi:false
+symbols:false
+show_feels_like:false
+show_uvi:false
+show_wind:true
+show_humidity:true
+show_pressure:false
+show_daylight:false
