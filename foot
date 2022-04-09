@@ -1,3 +1,5 @@
+#
+# $HOME/.config/foot/foot.ini
 [main]
 font=Jetbrains Mono:size=12
 bold-text-in-bright=true
