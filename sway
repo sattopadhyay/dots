@@ -57,8 +57,8 @@ bindsym {
 	$mod+n exec diskmount
 	$mod+Shift+n exec diskunmount
 	$mod+a exec notion-app
-	$mod+Shift+k [title="__focused__"] opacity plus 0.1
-	$mod+Shift+j [title="__focused__"] opacity minus 0.1
+	$mod+Shift+k [con_id="__focused__"] opacity plus 0.1
+	$mod+Shift+j [con_id="__focused__"] opacity minus 0.1
 }
 
 
