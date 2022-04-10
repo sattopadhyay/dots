@@ -1,0 +1,5 @@
+[Unit]
+Description=Remind to fill up Notion daily checklist
+
+[Service]
+ExecStart=/usr/bin/notify-send -u critical "Fill up Notion Dailies"

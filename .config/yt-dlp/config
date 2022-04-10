@@ -1,0 +1,7 @@
+#
+# $HOME/.config/yt-dlp/config
+--sponsorblock-mark=all
+-S "res:480"
+-o "%(title)s.%(ext)s"
+--merge-output-format mp4
+--force-ipv4

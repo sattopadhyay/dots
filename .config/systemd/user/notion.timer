@@ -1,0 +1,9 @@
+[Unit]
+Description=Remind to fill up Notion checklist everyday at 4 pm
+
+[Timer]
+OnCalendar=*-*-* 16:00:00
+
+[Install]
+WantedBy=timers.target
+

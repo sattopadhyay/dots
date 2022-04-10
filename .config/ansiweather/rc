@@ -1,5 +1,6 @@
 #
-# $HOME/.ansiweatherrc
+# $HOME/.config/rc
+# Original Location - $HOME/.ansiweatherrc . Custom location set with ANSIWEATHERRC in fish config.
 location:kolkata
 units:metric
 ansi:false

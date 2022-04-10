@@ -1,0 +1,20 @@
+set shell bash
+set shellopts '-eu'
+set icons on
+set drawbox
+
+map D $rl $fx
+cmd open ${{
+	file=$(echo "$fx" | xargs -d '\n' -L 1)
+	filename=$(basename -- "$file" )
+	ext="${filename##*.}"
+	mime=$(file -b --mime-type "$filename")
+	if [[ "$mime" == *"audio"* ]] || [[ "$ext" == "m4a" ]] || [[ "$ext" == "m3u" ]] ; then
+		echo "$fx" | xargs -d'\n' mpv --no-video
+	elif [[ "$mime" == *"image"* ]] ; then
+		echo "$fx" | xargs -d '\n' imv
+	else
+		echo "$fx" | xargs -d'\n' -n 1 xdg-open
+	fi
+	
+}}

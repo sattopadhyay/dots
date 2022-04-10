@@ -1,0 +1,8 @@
+[Unit]
+Description=Update system weekly
+
+[Timer]
+OnCalendar=Sun *-*-* 16:00:00
+
+[Install]
+WantedBy=timers.target

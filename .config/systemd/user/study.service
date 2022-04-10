@@ -1,0 +1,5 @@
+[Unit]
+Description=Just start stuyding
+
+[Service]
+ExecStart=%h/.local/bin/study

@@ -10,6 +10,7 @@ fish_vi_key_bindings
 
 export BROWSER=firefox
 export CALIBRE_USE_DARK_PALETTE=1
+export ANSIWEATHERRC=~/.config/ansiweather/rc
 
 [ -z "$BEMENU_OPTS" ] && export BEMENU_OPTS='-bil 20 --fn pango:JetBrains Mono NL Bold 15 -W 0.4 --prompt=""'
 

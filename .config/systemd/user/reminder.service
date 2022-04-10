@@ -1,0 +1,5 @@
+[Unit]
+Description=Remind every thirty minutes to get up from computer
+
+[Service]
+ExecStart=/usr/bin/notify-send -u critical "You've been here for 30 minutes. Get up."

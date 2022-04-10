@@ -1,0 +1,9 @@
+[Unit]
+Description=Reminder to change water of plants
+
+[Timer]
+OnCalendar=Thu *-*-* 17:00:00
+Unit=changewater.service
+
+[Install]
+WantedBy=timers.target
