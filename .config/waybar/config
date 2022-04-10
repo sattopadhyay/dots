@@ -3,7 +3,7 @@
 	"layer": "bottom",
 	"modules-left":["sway/workspaces", "sway/mode", "pulseaudio", "custom/memory-cpu", "custom/cputemp"],
 	"modules-center":["clock"],
-	"modules-right":["custom/diskuse","custom/temps","custom/net-status", "tray"],
+	"modules-right":["custom/diskuse","custom/temps","custom/net-status","custom/netspeed","tray"],
 	
 	"tray": {
         "icon-size": 21,
@@ -20,6 +20,12 @@
 	"custom/net-status": {
 	"exec": "$HOME/.local/bin/networkstatus",
         "format": "{}",
+	"interval": 1,
+	},
+
+	"custom/netspeed": {
+	"exec": "$HOME/.local/bin/netspeed",
+	"format": "{}",
 	"interval": 1,
 	},
 
