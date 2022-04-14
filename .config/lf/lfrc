@@ -12,9 +12,9 @@ cmd open ${{
 	if [[ "$mime" == *"audio"* ]] || [[ "$ext" == "m4a" ]] || [[ "$ext" == "m3u" ]] ; then
 		echo "$fx" | xargs -d'\n' mpv --no-video
 	elif [[ "$mime" == *"image"* ]] ; then
-		echo "$fx" | xargs -d '\n' imv
+		echo "$fx" | xargs -d '\n' imv &
 	else
-		echo "$fx" | xargs -d'\n' -n 1 xdg-open
+		echo "$fx" | xargs -d'\n' mimeopen &
 	fi
 	
 }}
