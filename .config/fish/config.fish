@@ -51,7 +51,7 @@ abbr -a i "nvim ~/.config/i3/config"
 abbr -a g 'grep --color'
 abbr -a grep 'grep --color'
 abbr -a ip 'ip -color=auto'
-abbr -a s "MOZ_ENABLE_WAYLAND=1 sway"
+abbr -a s "MOZ_ENABLE_WAYLAND=1 TERMINAL=footclient sway"
 abbr -a e "exit"
 abbr -a p "poweroff"
 abbr -a c "clear"
