@@ -3,7 +3,6 @@ set shellopts '-eu'
 set icons on
 set drawbox
 
-map D $rl $fx
 cmd open ${{
 	file=$(echo "$fx" | xargs -d '\n' -L 1)
 	filename=$(basename -- "$file" )
@@ -20,3 +19,11 @@ cmd open ${{
 	fi
 	
 }}
+
+cmd delete ${{
+	echo "$fx" | xargs -d '\n' ~/.local/bin/rl
+
+}}
+
+
+map D delete
