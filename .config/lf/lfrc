@@ -12,7 +12,7 @@ cmd open ${{
 		echo "$fx" | xargs -d'\n' mpv --no-video
 	elif [[ "$mime" == *"image"* ]] ; then
 		echo "$fx" | xargs -d '\n' imv &
-	elif [[ "$mime" == *"text"* ]] ; then
+	elif [[ "$mime" == "text"* ]] ; then
 		echo "$fx" | xargs -d '\n' nvim -O
 	else
 		echo "$fx" | xargs -d'\n' mimeopen > /dev/null 2>&1 &
