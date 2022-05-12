@@ -11,11 +11,11 @@ cmd open ${{
 	if [[ "$mime" == *"audio"* ]] || [[ "$ext" == "m4a" ]] || [[ "$ext" == "m3u" ]] ; then
 		echo "$fx" | xargs -d'\n' mpv --no-video
 	elif [[ "$mime" == *"image"* ]] ; then
-		echo "$fx" | xargs -d '\n' imv &
+		echo "$fx" | nohup xargs -d '\n' imv &
 	elif [[ "$mime" == "text"* ]] ; then
 		echo "$fx" | xargs -d '\n' nvim -O
 	else
-		echo "$fx" | xargs -d'\n' mimeopen > /dev/null 2>&1 &
+		echo "$fx" | nohup xargs -d'\n' mimeopen > /dev/null 2>&1 &
 	fi
 	
 }}
@@ -25,5 +25,7 @@ cmd delete ${{
 
 }}
 
+cmd aj %lf -remote "send $id cd '$(autojump $1)'"
+map a push :aj<space>
 
 map D delete
