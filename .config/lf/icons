@@ -3,7 +3,13 @@ ln ➡️
 ex 🖥️
 fi  📝
 
-# Image and Video Formats
+# Video Formats
+*.mp4	📽️
+*.mkv   📽️
+*.avi   📽️
+
+# Image Formats
+*.heic  🖼️
 *.jpg   🖼️
 *.jpeg  🖼️
 *.mjpg  🖼️
@@ -27,10 +33,8 @@ fi  📝
 *.mpg   🖼️
 *.mpeg  🖼️
 *.m2v   🖼️
-*.mkv   🖼️
 *.webm  🖼️
 *.ogm   🖼️
-*.mp4   🖼️
 *.m4v   🖼️
 *.mp4v  🖼️
 *.vob   🖼️
@@ -41,7 +45,6 @@ fi  📝
 *.rm    🖼️
 *.rmvb  🖼️
 *.flc   🖼️
-*.avi   🖼️
 *.fli   🖼️
 *.flv   🖼️
 *.gl    🖼️
