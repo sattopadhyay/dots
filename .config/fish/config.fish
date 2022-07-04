@@ -20,6 +20,7 @@ abbr -e (abbr -l)
 #Yt-dlp abbr -aes
 abbr -a yd "yt-dlp  -S 'res:480' -o '%(title)s.%(ext)s'"
 abbr -a ya "yt-dlp -x --embed-thumbnail --audio-format mp3 -o '%(title)s.%(ext)s'"
+#abbr -a ya "yt-dlp -x --audio-format mp3 --embed-thumbnail --embed-chapters -o '%(title)s.%(ext)s'"
 abbr -a ypa "yt-dlp -x --embed-thumbnail --audio-format mp3 -o '%(playlist_index)s. %(title)s.%(ext)s'"
 abbr -a ypv "yt-dlp -S "res:480" -o '%(playlist_index)s. %(title)s.%(ext)s'"
 
