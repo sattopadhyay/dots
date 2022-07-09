@@ -10,5 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'ap/vim-css-color'
 Plug 'morhetz/gruvbox'
+Plug 'frazrepo/vim-rainbow'
 call plug#end()
 set guicursor=
+let g:rainbow_active = 1
