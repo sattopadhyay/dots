@@ -17,6 +17,14 @@
 	},
 
 
+	"custom/bar-vol": {
+	"exec": "$HOME/.local/bin/bar-vol",
+	"format": "{}",
+	"interval":"once",
+	"signal":9,
+	},
+
+
 	"custom/net-status": {
 	"exec": "$HOME/.local/bin/networkstatus",
         "format": "{}",

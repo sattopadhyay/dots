@@ -261,13 +261,16 @@ label:focus {
 }
 #custom-memory-cpu {
 	background-color: #0f2b09 ;
+	padding: 0 5px ;
 }
 #custom-cputemp {
 	background-color: #FF0000 ;
 	color: black;
+	padding: 0 5px ;
 }
 #custom-diskuse {
 	background-color: darkblue;
+	padding: 0 5px ;
 }
 
 #custom-net-status {
@@ -276,4 +279,9 @@ label:focus {
 
 #custom-netspeed {
 	background-color: #3a35cc;
+}
+#custom-bar-vol {
+	color: black;
+	background-color: yellow;
+	padding: 0 5px ;
 }
