@@ -5,6 +5,7 @@ autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%
 autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python :ALEDisable
 autocmd FileType c set foldmethod=indent
+highlight Folded guibg=darkblue
 
 set nu rnu
 set termguicolors
