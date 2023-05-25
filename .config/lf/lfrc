@@ -1,6 +1,6 @@
 set shell bash
 set shellopts '-eu'
-set icons on
+set icons true 
 set drawbox
 
 cmd open ${{
