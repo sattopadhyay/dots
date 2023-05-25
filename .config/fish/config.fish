@@ -5,10 +5,9 @@ set fish_greeting ""
 set -g fish_cursor_insert line blink
 set -g fish_cursor_default line blink
 set -gx fish_user_paths $HOME/.local/bin
-status --is-interactive && motivate
 fish_vi_key_bindings
 
-export BROWSER=firefox
+#export BROWSER=firefox
 export CALIBRE_USE_DARK_PALETTE=1
 export ANSIWEATHERRC=~/.config/ansiweather/rc
 
@@ -19,7 +18,7 @@ abbr -e (abbr -l)
 
 #Yt-dlp abbr -aes
 abbr -a yd "yt-dlp  -S 'res:480' -o '%(title)s.%(ext)s'"
-abbr -a ya "yt-dlp -x --embed-thumbnail --audio-format mp3 -o '%(title)s.%(ext)s'"
+abbr -a ya "yt-dlp -x --embed-thumbnail --audio-format mp3 --embed-chapters -o '%(title)s.%(ext)s'"
 #abbr -a ya "yt-dlp -x --audio-format mp3 --embed-thumbnail --embed-chapters -o '%(title)s.%(ext)s'"
 abbr -a ypa "yt-dlp -x --embed-thumbnail --audio-format mp3 -o '%(playlist_index)s. %(title)s.%(ext)s'"
 abbr -a ypv "yt-dlp -S "res:480" -o '%(playlist_index)s. %(title)s.%(ext)s'"
@@ -52,7 +51,7 @@ abbr -a i "nvim ~/.config/i3/config"
 abbr -a g 'grep --color'
 abbr -a grep 'grep --color'
 abbr -a ip 'ip -color=auto'
-abbr -a s "MOZ_ENABLE_WAYLAND=1 TERMINAL=footclient sway"
+abbr -a s "ANSIWEATHERRC=~/.config/ansiweather/rc  TERMINAL=footclient MOZ_ENABLE_WAYLAND=1 _JAVA_AWT_WM_NONREPARENTING=1 sway"
 abbr -a e "exit"
 abbr -a p "poweroff"
 abbr -a c "clear"
@@ -95,4 +94,6 @@ abbr -a bp 'echo -e "power off" | bluetoothctl && exit'
 abbr -a aud "mpv --no-video"
 
 #Autojump
-if test -f /usr/share/autojump/autojump.fish ; . /usr/share/autojump/autojump.fish ; end
+#if test -f /usr/share/autojump/autojump.fish ; . /usr/share/autojump/autojump.fish ; end
+[ -f /usr/share/autojump/autojump.fish ]; and source /usr/share/autojump/autojump.fish
+
