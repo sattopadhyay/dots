@@ -1,6 +1,6 @@
 set shell bash
 set shellopts '-eu'
-set icons true 
+set icons true
 set drawbox
 
 cmd open ${{
@@ -9,7 +9,9 @@ cmd open ${{
 	ext="${filename##*.}"
 	mime=$(file -b --mime-type "$filename")
 	if [[ "$mime" == *"audio"* ]] || [[ "$ext" == "m4a" ]] || [[ "$ext" == "m3u" ]] ; then
-		echo "$fx" | xargs -d'\n' mpv --no-video
+		echo "$fx" | xargs -d'\n' mpv --no-video >/dev/null 2>&1 &
+	elif [[ "$mime" == *"video"* ]] ; then
+		echo "$fx" | nohup xargs -d '\n' mpv >/dev/null 2>&1 &
 	elif [[ "$mime" == *"image"* ]] ; then
 		echo "$fx" | nohup xargs -d '\n' imv >/dev/null 2>&1 &
 	elif [[ "$mime" == "text"* ]] ; then
