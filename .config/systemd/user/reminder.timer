@@ -1,9 +1,0 @@
-[Unit]
-Description=Remind every thirty minutes to get up from computer
-
-[Timer]
-OnCalendar=*:0/30
-Unit=reminder.service
-
-[Install]
-WantedBy=timers.target

@@ -1,5 +1,0 @@
-[Unit]
-Description=Reminder to change water of plants in water
-
-[Service]
-ExecStart=/usr/bin/notify-send -u critical "Change water of plants now"

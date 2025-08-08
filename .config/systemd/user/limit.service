@@ -1,5 +1,0 @@
-[Unit]
-Description=Poweroff system
-
-[Service]
-ExecStart=%h/.local/bin/limit

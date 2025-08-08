@@ -1,5 +1,0 @@
-[Unit]
-Description=Excercise Motivation
-
-[Service]
-ExecStart=/usr/bin/notify-send -u critical "Excercise NOW for just 5 minutes!!"

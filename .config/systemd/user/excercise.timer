@@ -1,9 +1,0 @@
-[Unit]
-Description=Excercise Motivation
-
-[Timer]
-OnCalendar=*-*-* 12:00:00
-Unit=excercise.service
-
-[Install]
-WantedBy=timers.target
