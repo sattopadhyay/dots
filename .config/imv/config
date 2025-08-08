@@ -61,3 +61,11 @@ r = reset
 # Slideshow control
 t = slideshow +1
 <Shift+T> = slideshow -1
+
+# Delete the current image:
+<Ctrl+d> = exec rm "$imv_current_file"; close
+# Rename a file:
+#<Shift+R> = exec imv_rename "$imv_current_file"
+
+# Set Current Image as wallpaper
+<Shift+W> = exec /home/satto/.local/bin/wallset "$imv_current_file" ; quit
