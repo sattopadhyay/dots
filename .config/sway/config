@@ -36,6 +36,24 @@ set {
 #    gsettings set $gnome-schema cursor-theme 'Adwaita'
 #}
 
+# timeout, suspend, hibernate NOTE: needs systemd
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000 -i $lock_bg' \
+         timeout 600 'systemctl suspend' \
+         timeout 900 'systemctl hibernate' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000 -i $lock_bg'
+
+input type:touchpad {
+	tap enabled
+	natural_scroll enabled
+	dwt enabled
+}
+
+input type:keyboard {
+	xkb_options "caps:swapescape, ctrl:swap_lalt_lctl, altwin:swap_ralt_rwin, xkb_numlock enabled"
+}
+
 #custom shortcuts
 bindsym {
 	$mod+Return exec $term
@@ -43,12 +61,9 @@ bindsym {
 	$mod+r exec $term -e lf
 	$mod+b exec $BROWSER
 	$mod+Shift+b exec $HOME/.local/bin/private-browser
-	$mod+t exec tuition
-	$mod+Shift+t exec tuition-part
 	$mod+d exec $menu
 	$mod+e exec emojimenu
 	$mod+u exec unimenu
-	$mod+c exec ebook-viewer --continue
 	$mod+s exec tmux-select
 	$mod+v exec copyq menu
 	$mod+Shift+z exec 'tmux kill-session -t lofi ; tmux new-session -d -s "lofi" -n "lofi" -c "$HOME/music" mpv --loop --save-position-on-quit --input-ipc-server=/tmp/mpvsocket ~/music/lofi.mp3'
@@ -56,7 +71,6 @@ bindsym {
 	$mod+m exec mate-calc
 	$mod+n exec diskmount
 	$mod+Shift+n exec diskunmount
-	$mod+a exec notion-app
 	$mod+Shift+k [con_id="__focused__"] opacity plus 0.1
 	$mod+Shift+j [con_id="__focused__"] opacity minus 0.1
 }
